@@ -1,75 +1,94 @@
-#### Library Management System
+# Library Management System
 
-A console-based Java application developed to manage books, track user loans, and maintain digital records for a library using MySQL database persistence. 
+A Java project for managing library books, searching for titles, and registering book loans using a MySQL database.
 
-#### About the Project
+## About the Project
 
-This academic project focuses on backend development fundamentals, object-oriented programming (OOP) in Java, and relational database management systems (RDBMS). It implements core CRUD (Create, Read, Update, Delete) operations and secures database interactions using JDBC. 
+This project was developed as part of my academic programming practice. It focuses on creating a basic library management system using Java and MySQL.
 
-To ensure data integrity and prevent security vulnerabilities, the application utilizes parameterized queries via PreparedStatement to guard against SQL Injection. 
+The program allows users to register books, display the available catalog, search for books by title, and register loans to students. The information is stored in a MySQL database and accessed through JDBC.
 
-#### Features
+## Features
 
-* **Book Inventory Management:** Register new books into the database and retrieve a complete list of current inventory.
-* **Search Engine:** Query and locate specific books instantly filtering by title matching.
-* **Loan Tracking System:** Issue and register book loans assigned to users with real-time database updates.
-* **History Logging:** Query and review active or past book lending transaction records.
+- Register new books with their titles and authors.
+- Display all registered books.
+- Search for books by title.
+- Check whether a book is available or already borrowed.
+- Register book loans to students.
+- Save loan dates in the database.
+- Display registered loans.
+- Update book availability when a loan is registered.
 
-#### Technologies and Concepts
+## Technologies and Concepts
 
-* **Language:** Java (Version 17 or higher)
-* **Database:** MySQL Server (Managed via MySQL Workbench / XAMPP)
-* **Driver:** JDBC (MySQL Connector/J)
-* **Security & DB Practices:** SQL Schema Design, Foreign Keys, Parameterized Queries (PreparedStatement), Connection Management.
+- **Language:** Java
+- **Database:** MySQL
+- **Database connection:** JDBC (Java Database Connectivity)
+- **Libraries:** `java.sql`, `java.util`, and `java.time`
+- **Database operations:** INSERT, SELECT, and UPDATE.
+- **SQL concepts:** Tables, primary keys, foreign keys, and relationships.
+- **Programming concepts:** Methods, loops, conditional statements, and exception handling.
+- **Prepared statements:** Using `PreparedStatement` to execute parameterized SQL queries.
 
-#### Project Structure
+## Project Structure
 
-text
-
-LibraryManagementSystem/
-├── database/
-│   └── library.sql
+```text
+library-management-system/
 ├── src/
 │   └── LibraryManagementSystem.java
+├── database/
+│   └── library.sql
 └── README.md
+```
 
-Usa el código con precaución.
+## Requirements
 
-#### Setup and Installation
+- Java 17 or higher.
+- MySQL Server.
+- MySQL Workbench or phpMyAdmin.
+- MySQL Connector/J.
 
-#### 1. Database Initialization
+The MySQL database must be created using the `database/library.sql` script.
 
-1. Open your preferred database tool (MySQL Workbench or phpMyAdmin).
-2. Create a new database schema and execute the source scripts located inside database/library.sql.
+The database connection settings in `LibraryManagementSystem.java` must match the local MySQL configuration.
 
-#### 2. Connection Configuration
+## How to Run
 
-1. Open src/LibraryManagementSystem.java.
-2. Locate the database configuration constants and update them with your local credentials:
+### 1. Create the database
 
-java
+Open MySQL Workbench or phpMyAdmin and execute the SQL commands inside:
 
-private static final String URL = "jdbc:mysql://localhost:3306/your_database_name";
-private static final String USER = "your_username";
-private static final String PASSWORD = "your_password";
+```text
+database/library.sql
+```
 
-Usa el código con precaución.
+### 2. Configure the database connection
 
-#### 3. Dependencies
+Open `LibraryManagementSystem.java` and update the connection settings:
 
-* Download and add the **MySQL Connector/J** (.jar file) to your project's build path or dependencies structure.
+```java
+private static final String URL = "jdbc:mysql://localhost:3306/library_db";
+private static final String USER = "root";
+private static final String PASSWORD = "";
+```
 
-#### 4. Running the Application
+Replace the username and password with your own MySQL credentials.
 
-Compile and execute the LibraryManagementSystem main class from your IDE terminal or preferred workspace. 
+### 3. Add MySQL Connector/J
 
-#### Future Enhancements
+Add the MySQL Connector/J library to the Java project so that JDBC can connect to the database.
 
-* [ ] Implement a full Graphical User Interface (GUI) using JavaFX or Swing.
-* [ ] Transition from raw JDBC to an Object-Relational Mapping (ORM) framework like Hibernate/JPA.
-* [ ] Add field validation routines for input parameters and loan expiration calculations.
+### 4. Run the program
 
-#### Author
+Compile and execute `LibraryManagementSystem.java` from your IDE or terminal, making sure the MySQL connector is included in the classpath.
 
-**Fátima Montoya**
-Information Systems Engineering Student at Universidad de Sonora
+**Note:** MySQL Server must be running before starting the application. The program uses a local database connection.
+
+## What I Learned
+
+While working on this project, I practiced connecting Java applications to MySQL databases, creating tables and relationships, executing SQL queries with JDBC, organizing code into methods, and managing information through basic database operations.
+
+## Author
+
+**Fátima Montoya**  
+Information Systems Engineering Student
