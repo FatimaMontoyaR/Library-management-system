@@ -1,26 +1,75 @@
-# Library Management System — Java + MySQL
+#### Library Management System
 
-Proyecto académico básico para administrar libros y consultar registros de una biblioteca.
+A console-based Java application developed to manage books, track user loans, and maintain digital records for a library using MySQL database persistence. 
 
-## Funciones
-- Registrar libros.
-- Mostrar los libros registrados.
-- Buscar un libro por título.
-- Registrar préstamos de libros.
-- Consultar los préstamos.
+#### About the Project
 
-## Requisitos
-- Java 17 o superior.
-- MySQL Server y MySQL Workbench o XAMPP.
-- MySQL Connector/J (controlador JDBC).
+This academic project focuses on backend development fundamentals, object-oriented programming (OOP) in Java, and relational database management systems (RDBMS). It implements core CRUD (Create, Read, Update, Delete) operations and secures database interactions using JDBC. 
 
-## Preparar la base de datos
-1. Abre MySQL Workbench o phpMyAdmin.
-2. Ejecuta el contenido de `database/library.sql`.
-3. Abre `src/LibraryManagementSystem.java`.
-4. En la constante `URL`, `USER` y `PASSWORD`, configura los datos de tu conexión.
-5. Agrega MySQL Connector/J al proyecto.
-6. Ejecuta la clase `LibraryManagementSystem`.
+To ensure data integrity and prevent security vulnerabilities, the application utilizes parameterized queries via PreparedStatement to guard against SQL Injection. 
 
-## Nota
-Es una versión de consola para practicar Java, JDBC, SQL y operaciones CRUD básicas. El código usa consultas preparadas (`PreparedStatement`) para enviar datos a MySQL.
+#### Features
+
+* **Book Inventory Management:** Register new books into the database and retrieve a complete list of current inventory.
+* **Search Engine:** Query and locate specific books instantly filtering by title matching.
+* **Loan Tracking System:** Issue and register book loans assigned to users with real-time database updates.
+* **History Logging:** Query and review active or past book lending transaction records.
+
+#### Technologies and Concepts
+
+* **Language:** Java (Version 17 or higher)
+* **Database:** MySQL Server (Managed via MySQL Workbench / XAMPP)
+* **Driver:** JDBC (MySQL Connector/J)
+* **Security & DB Practices:** SQL Schema Design, Foreign Keys, Parameterized Queries (PreparedStatement), Connection Management.
+
+#### Project Structure
+
+text
+
+LibraryManagementSystem/
+├── database/
+│   └── library.sql
+├── src/
+│   └── LibraryManagementSystem.java
+└── README.md
+
+Usa el código con precaución.
+
+#### Setup and Installation
+
+#### 1. Database Initialization
+
+1. Open your preferred database tool (MySQL Workbench or phpMyAdmin).
+2. Create a new database schema and execute the source scripts located inside database/library.sql.
+
+#### 2. Connection Configuration
+
+1. Open src/LibraryManagementSystem.java.
+2. Locate the database configuration constants and update them with your local credentials:
+
+java
+
+private static final String URL = "jdbc:mysql://localhost:3306/your_database_name";
+private static final String USER = "your_username";
+private static final String PASSWORD = "your_password";
+
+Usa el código con precaución.
+
+#### 3. Dependencies
+
+* Download and add the **MySQL Connector/J** (.jar file) to your project's build path or dependencies structure.
+
+#### 4. Running the Application
+
+Compile and execute the LibraryManagementSystem main class from your IDE terminal or preferred workspace. 
+
+#### Future Enhancements
+
+* [ ] Implement a full Graphical User Interface (GUI) using JavaFX or Swing.
+* [ ] Transition from raw JDBC to an Object-Relational Mapping (ORM) framework like Hibernate/JPA.
+* [ ] Add field validation routines for input parameters and loan expiration calculations.
+
+#### Author
+
+**Fátima Montoya**
+Information Systems Engineering Student at Universidad de Sonora
